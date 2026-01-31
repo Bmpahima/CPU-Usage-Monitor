@@ -155,6 +155,12 @@
   border-radius: 8px;
 }
 
+.optionInputContainer input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 9999s ease-out 0s;
+}
+
 .optionInputContainer input.invalid {
   border: 1px solid rgba(255, 24, 24, 0.8);
 }
