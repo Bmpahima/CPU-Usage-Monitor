@@ -37,15 +37,16 @@ const SimpleAreaChart = ({ data }) => {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
           dataKey="name"
-          label={{ value: "DateTime", angle: 0 }}
+          label={{ value: "Time", angle: 0 }}
           tick={false}
         />
         <YAxis width="auto" angle={0} unit="%" />
-        <Tooltip />
+        <Tooltip formatter={(val) => `${val}%`} />
         <Area
           type="monotone"
           dataKey="precentage"
           stroke="#0234b3"
+          strokeWidth={2}
           fill="#5980ff"
         />
       </AreaChart>

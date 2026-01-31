@@ -4,9 +4,10 @@ import { CSVLink } from "react-csv";
 
 import styles from "./App.module.css";
 import SimpleAreaChart from "../components/data-display/SimpleAreaChart.js";
+import StatItem from "../components/data-display/StatItem.js";
+
 import { getCPUUtilizationMetric } from "../http/requests.js";
 import isValidForm from "../utils/validators.js";
-import StatItem from "../components/data-display/StatItem.js";
 
 const initialFormData = {
   ipAddress: "",
@@ -65,9 +66,6 @@ function App() {
       setData(null);
 
       const validation = isValidForm(formData);
-      console.log(formData);
-      console.log(validation);
-
       setFormValidation((prev) => validation);
 
       const hasErrors = Object.values(validation).some((v) => !v.valid);
@@ -101,8 +99,6 @@ function App() {
 
     headersInput.push({ label: "timestamp", key: "timestamp" });
     headersInput.push({ label: "CPU_usage", key: "CPU_usage" });
-
-    console.log(dataInput);
 
     return {
       data: dataInput,

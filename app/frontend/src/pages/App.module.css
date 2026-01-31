@@ -98,12 +98,6 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
-@media screen and (max-width: 990px) {
-  .formContainer {
-    min-height: 500px;
-  }
-}
-
 .formHeaderContainer {
   padding-bottom: 1rem;
 }
@@ -185,22 +179,11 @@
   border: none;
   border-radius: 10px;
   font-size: 1rem;
+  font-weight: 600;
   color: #fff;
   transition: all 0.2s ease;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
   margin-top: 16px;
-  display: grid;
-  justify-items: center;
-}
-
-.submitButton:hover {
-  filter: brightness(1.2);
-  scale: 1.05;
-}
-
-.submitButton:active {
-  filter: brightness(0.9);
-  scale: 1;
 }
 
 .validationErrorMsg {
@@ -219,13 +202,8 @@
   background-color: rgba(255, 24, 24, 0.1);
   border: 1px solid rgba(255, 24, 24, 0.4);
   border-radius: 8px;
-}
-
-.loaderWrapper {
-  height: 420px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0 10px;
+  text-align: center;
 }
 
 .statisticsContainer {
@@ -237,6 +215,13 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.loaderWrapper {
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .statContent {
@@ -273,6 +258,15 @@
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+@media screen and (max-width: 390px) {
+  .statsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 120px);
+
+    gap: 8px;
+  }
 }
 
 .statItem {
@@ -316,12 +310,14 @@
   text-decoration: none;
 }
 
-.downloadButton:hover {
+.downloadButton:hover,
+.submitButton:hover {
   filter: brightness(1.2);
   scale: 1.05;
 }
 
-.downloadButton:active {
+.downloadButton:active,
+.submitButton:active {
   filter: brightness(0.9);
   scale: 1;
 }

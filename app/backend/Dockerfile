@@ -13,8 +13,8 @@ EXPOSE 8000
 CMD ["node", "app.js"]
 
 # BUILD:
-# docker build -t faddom-backend .   
+# docker build -t cpumonitor-backend .   
 
 # RUN:
-# docker run --name f-backend -d --env-file ./.env -p 8000:8000 faddom-backend
+# docker run --name cpu-backend -d --env-file ./.env -p 8000:8000 cpumonitor-backend
 

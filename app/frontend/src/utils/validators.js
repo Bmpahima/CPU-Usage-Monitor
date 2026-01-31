@@ -53,7 +53,9 @@ export default function isValidForm({
     timeInterval: { valid: true, message: "" },
   };
 
-  if (!ipAddress || !isValidIP(ipAddress)) {
+  if (!ipAddress) {
+    result["ipAddress"] = { valid: false, message: "IP address isrequired." };
+  } else if (!isValidIP(ipAddress)) {
     result["ipAddress"] = { valid: false, message: "IP address is not valid." };
   }
 
@@ -72,7 +74,12 @@ export default function isValidForm({
     };
   }
 
-  if (!isValidTimeInterval(timeInterval)) {
+  if (!timeInterval) {
+    result["timeInterval"] = {
+      valid: false,
+      message: "Time interval is required.",
+    };
+  } else if (!isValidTimeInterval(timeInterval)) {
     result["timeInterval"] = {
       valid: false,
       message: "Time interval should be greater than 0.",

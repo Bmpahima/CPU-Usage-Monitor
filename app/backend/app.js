@@ -21,14 +21,13 @@ app.get(
       const { ipAddress, startDateTime, endDateTime, timeIntervalInSeconds } =
         req.validated || {};
 
-      console.log(req.validated);
+      console.log("Validated: ", req.validated);
 
       if (
         !ipAddress ||
         !startDateTime ||
         !endDateTime ||
-        !timeIntervalInSeconds ||
-        Number(timeIntervalInSeconds) % 60 != 0
+        !timeIntervalInSeconds
       ) {
         const err = new Error("Credentials are invalid.");
         err.status = 422;
@@ -46,16 +45,12 @@ app.get(
       }
 
       const instanceId = result.instanceId;
-      console.log("Instance ID: ", instanceId);
-
-      const startDateTimeInput = new Date(startDateTime);
-      const endDateTimeInput = new Date(endDateTime);
 
       const input = {
         instanceId,
-        startTime: startDateTimeInput,
-        endTime: endDateTimeInput,
-        timeIntervalInSeconds: Number(timeIntervalInSeconds),
+        startTime: startDateTime,
+        endTime: endDateTime,
+        timeIntervalInSeconds: timeIntervalInSeconds,
       };
 
       const metrics = await getCPUUtilization(input);

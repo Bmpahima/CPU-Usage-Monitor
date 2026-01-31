@@ -10,10 +10,16 @@ export const validate = (rules) => async (req, res, next) => {
 
   const result = validationResult(req).formatWith(format);
   if (!result.isEmpty()) {
+    let inputValidationErrorMessage = "Input validation error:\n";
+
+    console.log(result.errors);
+    result.errors.forEach((err) => {
+      inputValidationErrorMessage += err.msg + "\n";
+    });
+
     return res.status(422).json({
       ok: false,
-      message: "Input validation error.",
-      validationsErrors: result.array({ onlyFirstError: true }),
+      message: inputValidationErrorMessage,
     });
   }
 

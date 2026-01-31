@@ -13,8 +13,8 @@ EXPOSE 8000
 CMD ["npm", "start"]
 
 # BUILD:
-# docker build -t faddom-frontend .   
+# docker build -t cpumonitor-frontend .   
 
 # RUN:
-# docker run --name f-frontend -d --env-file ./.env -it -p 3000:3000 faddom-frontend
+# docker run --name cpu-frontend -d --env-file ./.env -it -p 3000:3000 cpumonitor-frontend
 

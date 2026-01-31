@@ -32,11 +32,11 @@ export const cpuUsageValidator = [
     .isString()
     .trim()
     .isNumeric()
+    .withMessage("Time interval must be a positive integer.")
+    .toInt()
     .custom((val) => {
       if (Number(val) % 60 != 0)
-        throw new Error(
-          "Unexpected error, time interval is not multiple of 60.",
-        );
+        throw new Error("Unexpected error, time interval must be an integer.");
       return true;
     }),
 ];
