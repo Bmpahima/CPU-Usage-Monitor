@@ -32,7 +32,8 @@ npm start
 ## Run Backend (Docker)
 
 ```bash
-cd ../backend
+cd app/backend
+cp .env.example .env # Fill the .env file with the required credentials.
 docker build -t cpumonitor-backend .
 docker run --name cpu-backend -d --env-file ./.env -p 8000:8000 cpumonitor-backend
 # → http://localhost:8000
@@ -50,6 +51,8 @@ docker run --name cpu-frontend -d --env-file ./.env -it -p 3000:3000 cpumonitor-
 ## Run Both with Docker Compose (from project root)
 
 ```bash
+cd app/backend
+cp .env.example .env # Fill the .env file with the required credentials.
 cd ..
 docker compose up -d --build
 # Frontend: http://localhost:3000
