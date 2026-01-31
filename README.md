@@ -44,7 +44,7 @@ docker run --name cpu-backend -d --env-file ./.env -p 8000:8000 cpumonitor-backe
 ```bash
 cd ../frontend
 docker build -t cpumonitor-frontend .
-docker run --name cpu-frontend -d --env-file ./.env -it -p 3000:3000 cpumonitor-frontend
+docker run --name cpu-frontend -d -it -p 3000:3000 cpumonitor-frontend
 # → http://localhost:3000
 ```
 

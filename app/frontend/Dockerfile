@@ -16,5 +16,5 @@ CMD ["npm", "start"]
 # docker build -t cpumonitor-frontend .   
 
 # RUN:
-# docker run --name cpu-frontend -d --env-file ./.env -it -p 3000:3000 cpumonitor-frontend
+# docker run --name cpu-frontend -d -it -p 3000:3000 cpumonitor-frontend
 
