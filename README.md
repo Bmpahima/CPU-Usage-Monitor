@@ -1,4 +1,4 @@
-# CPU Monitor
+# CPU Usage Monitor
 
 The tool monitors the CPU utilization of an AWS instance by AWS CloudWatch, and displays statistics and a graph of CPU utilization percentages over time.
 
